@@ -1,0 +1,46 @@
+{
+  "records": 4312,
+  "dated": 4300,
+  "rawMissingDates": 11,
+  "normalizedDates": 202,
+  "dateConflictsPending": 1,
+  "motifTagged": 794,
+  "imagesMapped": 4312,
+  "materialOriginallyMissing": 1038,
+  "materialSupplemented": 432,
+  "techniqueSupplemented": 92,
+  "museums": {
+    "the V&A": 2478,
+    "北京故宫博物院（故宫专题）": 235,
+    "大都会艺术博物馆": 41,
+    "京都国立博物馆": 35,
+    "卢浮宫博物馆": 1495,
+    "台北故宫博物馆": 16,
+    "正仓院": 3,
+    "澳大利亚国家博物馆": 9
+  },
+  "materials": {
+    "未标注": 606,
+    "纸本": 124,
+    "陶瓷": 1211,
+    "金属": 150,
+    "纺织": 1939,
+    "玉石骨角": 51,
+    "复合及其他": 99,
+    "玻璃": 68,
+    "木竹漆": 64
+  },
+  "techniques": {
+    "未标注": 1269,
+    "彩绘印刷": 212,
+    "烧造施釉": 750,
+    "雕刻镶嵌": 104,
+    "铸锻": 25,
+    "其他工艺": 232,
+    "织绣": 1720
+  },
+  "repeatedAccessionRows": 329,
+  "countUnit": "官方元数据记录；并非去重后的物理藏品",
+  "materialRule": "first explicit match in ordered MATERIAL_RULES; raw fields preserved",
+  "motifRule": "title + Metadata only; AAT and description excluded"
+}

@@ -1,0 +1,75 @@
+{
+  "objectID": 46342,
+  "isHighlight": false,
+  "accessionNumber": "79.2.1023",
+  "accessionYear": "1879",
+  "isPublicDomain": true,
+  "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/79_2_1023_O1_sf.jpg",
+  "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/79_2_1023_O1_sf.jpg",
+  "additionalImages": [
+    "https://images.metmuseum.org/CRDImages/as/original/79_2_1023_Bm_sf.jpg"
+  ],
+  "constituents": null,
+  "department": "Asian Art",
+  "objectName": "Dish",
+  "title": "Lotus dish",
+  "culture": "China",
+  "period": "Qing dynasty (1644–1911)",
+  "dynasty": "",
+  "reign": "",
+  "portfolio": "",
+  "artistRole": "",
+  "artistPrefix": "",
+  "artistDisplayName": "",
+  "artistDisplayBio": "",
+  "artistSuffix": "",
+  "artistAlphaSort": "",
+  "artistNationality": "",
+  "artistBeginDate": "",
+  "artistEndDate": "",
+  "artistGender": "",
+  "artistWikidata_URL": "",
+  "artistULAN_URL": "",
+  "objectDate": "first half of the 19th century",
+  "objectBeginDate": 1800,
+  "objectEndDate": 1849,
+  "medium": "Porcelain painted in overglaze polychrome enamels and with applique decoration (Jingdezhen ware)",
+  "dimensions": "Diam. 5 in. (12.7 cm)",
+  "measurements": [
+    {
+      "elementName": "Overall",
+      "elementDescription": null,
+      "elementMeasurements": {
+        "Diameter": 12.7
+      }
+    }
+  ],
+  "creditLine": "Purchase by subscription, 1879",
+  "geographyType": "",
+  "city": "",
+  "state": "",
+  "county": "",
+  "country": "",
+  "region": "",
+  "subregion": "",
+  "locale": "",
+  "locus": "",
+  "excavation": "",
+  "river": "",
+  "classification": "Ceramics",
+  "rightsAndReproduction": "",
+  "linkResource": "",
+  "metadataDate": "2025-03-06T04:54:30Z",
+  "repository": "Metropolitan Museum of Art, New York, NY",
+  "objectURL": "https://www.metmuseum.org/art/collection/search/46342",
+  "tags": [
+    {
+      "term": "Flowers",
+      "AAT_URL": "http://vocab.getty.edu/page/aat/300132399",
+      "Wikidata_URL": "https://www.wikidata.org/wiki/Q506"
+    }
+  ],
+  "objectWikidata_URL": "",
+  "isTimelineWork": false,
+  "GalleryNumber": ""
+}

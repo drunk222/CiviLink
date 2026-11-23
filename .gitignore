@@ -1,0 +1,14 @@
+node_modules/
+*.log
+__pycache__/
+.DS_Store
+data/archive-ranges/
+data/official-parts/
+data/archive-batches/
+data/image-originals/
+data/*.rar
+data/*.cfg
+data/channel2_*.bin
+.env
+.env.*
+!.env.example

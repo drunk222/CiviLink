@@ -1,0 +1,22 @@
+{
+  "records": 4312,
+  "uniqueMainIds": 4312,
+  "uniqueImageIds": 4266,
+  "museumLabels": {
+    "the V&A": 2478,
+    "北京故宫博物院（故宫专题）": 235,
+    "大都会艺术博物馆": 41,
+    "京都国立博物馆": 35,
+    "卢浮宫博物馆": 1495,
+    "台北故宫博物馆": 16,
+    "正仓院": 3,
+    "澳大利亚国家博物馆": 9
+  },
+  "missingStart": 11,
+  "missingEnd": 11,
+  "xlsxSha256": "62daa1eee623a89d95775eade283318dfe11cf6e551eceac5931efbff39fde80",
+  "xlsxZipValidation": null,
+  "rarFileCRC32": "8e9cfe46 (verified)",
+  "source": "https://chinavis.org/2024/document/channel2_data.rar",
+  "method": "Official archive header and last 8 MiB fetched with HTTP Range; original XLSX compressed entry extracted, RAR file CRC32 and XLSX ZIP entry CRCs verified. Images not fully downloaded."
+}

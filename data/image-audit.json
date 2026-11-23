@@ -1,0 +1,11 @@
+{
+  "archiveEntries": 4312,
+  "validImages": 4312,
+  "recordsMapped": 4312,
+  "recordsWithoutImages": 0,
+  "mappedFiles": 4312,
+  "ambiguous": [],
+  "unmatched": [],
+  "errors": [],
+  "integrity": "Every rendered original file CRC32 checked against its original RAR entry"
+}

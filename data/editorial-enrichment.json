@@ -1,0 +1,18 @@
+{
+  "258": {
+    "title": "玉斧",
+    "material": "玉石骨角",
+    "field": "描述_EN",
+    "evidence": "a jade axe head would have been tied to a wooden shaft and held by a chieftain as a symbol of authority.",
+    "note": "名称与材料据原表保留的馆方描述补充；不据外观推测工艺。",
+    "materialLabel": "玉"
+  },
+  "259": {
+    "title": "玉琮",
+    "material": "玉石骨角",
+    "field": "描述_EN",
+    "evidence": "a ‘cong’ is a jade cylinder that is square on the outside with a round perforation in the middle.",
+    "note": "名称与材料据原表保留的馆方描述补充；不据外观推测工艺。",
+    "materialLabel": "玉"
+  }
+}

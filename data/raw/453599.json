@@ -1,0 +1,79 @@
+{
+  "objectID": 453599,
+  "isHighlight": false,
+  "accessionNumber": "56.185.2",
+  "accessionYear": "1956",
+  "isPublicDomain": true,
+  "primaryImage": "https://images.metmuseum.org/CRDImages/is/original/DP214301.jpg",
+  "primaryImageSmall": "https://images.metmuseum.org/CRDImages/is/web-large/DP214301.jpg",
+  "additionalImages": [
+    "https://images.metmuseum.org/CRDImages/is/original/DP214302.jpg",
+    "https://images.metmuseum.org/CRDImages/is/original/sf56-185-2a.jpg",
+    "https://images.metmuseum.org/CRDImages/is/original/sf56-185-2b.jpg",
+    "https://images.metmuseum.org/CRDImages/is/original/sf56-185-2c.jpg"
+  ],
+  "constituents": null,
+  "department": "Islamic Art",
+  "objectName": "Dish",
+  "title": "Dish with Floral Design",
+  "culture": "",
+  "period": "",
+  "dynasty": "",
+  "reign": "",
+  "portfolio": "",
+  "artistRole": "",
+  "artistPrefix": "",
+  "artistDisplayName": "",
+  "artistDisplayBio": "",
+  "artistSuffix": "",
+  "artistAlphaSort": "",
+  "artistNationality": "",
+  "artistBeginDate": "",
+  "artistEndDate": "",
+  "artistGender": "",
+  "artistWikidata_URL": "",
+  "artistULAN_URL": "",
+  "objectDate": "ca. 1545–60",
+  "objectBeginDate": 1520,
+  "objectEndDate": 1585,
+  "medium": "Stonepaste; polychrome painted under transparent glaze",
+  "dimensions": "H. 2 7/8 in. (7.3 cm)\r\nDiam. 13 7/8 in. (35.2 cm)",
+  "measurements": [
+    {
+      "elementName": "Overall",
+      "elementDescription": null,
+      "elementMeasurements": {
+        "Diameter": 35.2426,
+        "Height": 7.3025
+      }
+    }
+  ],
+  "creditLine": "H. O. Havemeyer Collection, Bequest of Horace Havemeyer, 1956",
+  "geographyType": "Made in",
+  "city": "Iznik",
+  "state": "",
+  "county": "",
+  "country": "Turkey",
+  "region": "",
+  "subregion": "",
+  "locale": "",
+  "locus": "",
+  "excavation": "",
+  "river": "",
+  "classification": "Ceramics",
+  "rightsAndReproduction": "",
+  "linkResource": "",
+  "metadataDate": "2025-12-20T04:50:39.43Z",
+  "repository": "Metropolitan Museum of Art, New York, NY",
+  "objectURL": "https://www.metmuseum.org/art/collection/search/453599",
+  "tags": [
+    {
+      "term": "Flowers",
+      "AAT_URL": "http://vocab.getty.edu/page/aat/300132399",
+      "Wikidata_URL": "https://www.wikidata.org/wiki/Q506"
+    }
+  ],
+  "objectWikidata_URL": "https://www.wikidata.org/wiki/Q116274174",
+  "isTimelineWork": false,
+  "GalleryNumber": "460"
+}

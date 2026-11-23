@@ -1,0 +1,12 @@
+{
+  "records": 10,
+  "images": 9,
+  "regions": [
+    "中国",
+    "土耳其",
+    "日本"
+  ],
+  "unlabelledMotifs": 3,
+  "sampleType": "目的性精选，非赛事全集、非随机样本",
+  "dateNote": "时间线使用API边界，详情保留原始年代文字；两者精度可能不同。"
+}
