@@ -1,5 +1,6 @@
 node_modules/
 *.log
+其他/
 __pycache__/
 .DS_Store
 data/archive-ranges/

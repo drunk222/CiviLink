@@ -4,11 +4,44 @@
   "rawMissingDates": 11,
   "normalizedDates": 202,
   "dateConflictsPending": 1,
-  "motifTagged": 794,
+  "bcNormalized": 50,
+  "bcSignConflicts": 2,
+  "bcEndpointConflicts": 18,
+  "centuryExpanded": 32,
+  "datePrecision": {
+    "range": 3363,
+    "year": 588,
+    "century": 349,
+    "unknown": 12
+  },
+  "motifTagged": 792,
+  "motifCounts": {
+    "花卉": 441,
+    "鸟禽": 86,
+    "龙凤": 103,
+    "莲花": 90,
+    "海浪": 24,
+    "人物": 168,
+    "葡萄": 6,
+    "几何": 10
+  },
   "imagesMapped": 4312,
+  "sourceCoverage": 3729,
   "materialOriginallyMissing": 1038,
   "materialSupplemented": 432,
+  "materialBasisTypes": {
+    "category": 405,
+    "title": 25,
+    "editorial": 2
+  },
+  "techniqueOriginallyMissing": 1361,
   "techniqueSupplemented": 92,
+  "techniqueBasisTypes": {
+    "title": 29,
+    "category": 63
+  },
+  "materialAllMulti": 341,
+  "techniqueAllMulti": 450,
   "museums": {
     "the V&A": 2478,
     "北京故宫博物院（故宫专题）": 235,
@@ -40,7 +73,10 @@
     "织绣": 1720
   },
   "repeatedAccessionRows": 329,
+  "duplicateGroups": 329,
+  "duplicateRecords": 658,
   "countUnit": "官方元数据记录；并非去重后的物理藏品",
-  "materialRule": "first explicit match in ordered MATERIAL_RULES; raw fields preserved",
-  "motifRule": "title + Metadata only; AAT and description excluded"
+  "materialRule": "primary: first explicit match in ordered MATERIAL_RULES; materialAll uses stricter boundaries and may include several categories",
+  "motifRule": "title + Metadata only; AAT and description excluded; English terms use boundaries to avoid dragonfly/thunderbird",
+  "rulesVersion": "0.4"
 }

@@ -31,7 +31,7 @@ test('matrix uses exact institution denominator and matches intersected filters'
 });
 test('candidate labels include field evidence and exclude noisy AAT/description',()=>{
  for(const x of data){assert.equal(x.motifs.length,x.motifEvidence.length);for(const e of x.motifEvidence){assert.ok(x.motifs.includes(e.motif));assert.ok(e.hits.length);for(const hit of e.hits)assert.ok(['藏品名称_ZN','藏品名称_EN','Metadata_ZN','Metadata_EN'].includes(hit.field));}}
- assert.equal(data.filter(x=>x.motifs.length).length,794);
+ assert.equal(data.filter(x=>x.motifs.length).length,792);
 });
 test('full-dataset filter state including unknown dates round trips',()=>{
  const f={...defaults(),museum:'卢浮宫博物馆',technique:'织绣',from:-3500,to:2050,dates:'unknown'};assert.deepEqual(parseFilters(filterQuery(f)),f);
@@ -48,10 +48,59 @@ test('P4 jade objects are supplemented from retained explicit descriptions',()=>
  assert.equal(data.filter(x=>x.techniqueBasis.length).length,92);
 });
 test('every supplemental material/craft label has a traceable original-field excerpt',()=>{
- for(const item of data){for(const basis of [...item.materialBasis,...item.techniqueBasis]){assert.ok(basis.field);assert.ok(String(raw[item.rawIndex][basis.field]).includes(basis.text));}}
+ for(const item of data){for(const basis of [...item.materialBasis,...item.techniqueBasis]){assert.ok(basis.field);assert.ok(['title','category','editorial'].includes(basis.type));assert.ok(String(raw[item.rawIndex][basis.field]).includes(basis.text));}}
+ assert.equal(data.filter(x=>x.materialBasis.some(b=>b.type==='category')).length,405);
+ assert.equal(data.filter(x=>x.materialBasis.some(b=>b.type==='title')).length,25);
+ assert.equal(data.filter(x=>x.materialBasis.some(b=>b.type==='editorial')).length,2);
+ assert.equal(data.filter(x=>x.techniqueBasis.some(b=>b.type==='category')).length,63);
+ assert.equal(data.filter(x=>x.techniqueBasis.some(b=>b.type==='title')).length,29);
 });
 test('explicit original date ranges are normalized with original numeric provenance',()=>{
  const x=data.find(x=>x.mainId==='7054');assert.equal(x.rawStart,-1279);assert.equal(x.start,960);assert.equal(x.end,1279);assert.match(x.dateNote,/规范化/);
- assert.equal(data.filter(x=>x.dateNote.startsWith('按原文')).length,202);
- const pending=data.find(x=>x.mainId==='4132');assert.equal(pending.start,null);assert.equal(pending.rawStart,-1000);
+ assert.equal(data.filter(x=>x.dateRule==='ad-made').length,202);
+ const pending=data.find(x=>x.mainId==='4132');assert.equal(pending.start,null);assert.equal(pending.rawStart,-1000);assert.equal(pending.dateRule,'pending');
+});
+test('BC dates follow explicit text and single centuries expand to full ranges',()=>{
+ const bell=data.find(x=>x.mainId==='596');assert.deepEqual([bell.start,bell.end],[-1300,-1200]);assert.equal(bell.dateRule,'bc-range');
+ const vessel=data.find(x=>x.mainId==='1003');assert.deepEqual([vessel.start,vessel.end],[-450,-250]);
+ const bead=data.find(x=>x.mainId==='654');assert.deepEqual([bead.start,bead.end],[-1100,-1000]);
+ const pendant=data.find(x=>x.mainId==='1110');assert.deepEqual([pendant.start,pendant.end],[-400,-301]);assert.equal(pendant.datePrecision,'century');
+ assert.equal(data.filter(x=>x.dateRule==='bc-range').length,18);
+ assert.equal(data.filter(x=>x.dateRule==='bc-century').length,32);
+ assert.equal(data.filter(x=>x.dateRule==='bc-year').length,0);
+ assert.equal(data.filter(x=>x.dateRule==='pending').length,1);
+ assert.ok(data.every(x=>x.start===null||x.end===null||x.start<=x.end));
+});
+test('motif rules avoid dragonfly and thunderbird substrings',()=>{
+ const dragonfly=data.find(x=>x.mainId==='115022');assert.ok(!dragonfly.motifs.includes('龙凤'));
+ const plane=data.find(x=>x.mainId==='110920');assert.ok(!plane.motifs.includes('鸟禽'));
+ assert.equal(data.filter(x=>x.motifs.length).length,792);
+ assert.equal(data.filter(x=>x.motifs.includes('龙凤')).length,103);
+ assert.equal(data.filter(x=>x.motifs.includes('鸟禽')).length,86);
+});
+test('multi-material and multi-technique labels are additive without changing the primary class',()=>{
+ const silkGold=data.find(x=>x.mainId==='14466');assert.equal(silkGold.material,'纺织');assert.deepEqual(silkGold.materialAll,['纺织','金属']);
+ const stoneware=data.find(x=>x.mainId==='10621');assert.equal(stoneware.material,'陶瓷');assert.deepEqual(stoneware.materialAll,['陶瓷']);
+ const plywood=data.find(x=>x.mainId==='115626');assert.equal(plywood.material,'木竹漆');assert.deepEqual(plywood.materialAll,['木竹漆','金属']);
+ const painted=data.find(x=>x.mainId==='10854');assert.deepEqual(painted.techniqueAll,['烧造施釉','彩绘印刷']);
+ assert.equal(data.filter(x=>x.materialAll.length>1).length,341);
+ assert.equal(data.filter(x=>x.techniqueAll.length>1).length,450);
+});
+test('duplicate accession rows are flagged without being removed',()=>{
+ const duplicates=data.filter(x=>x.duplicateGroupSize>1);
+ assert.equal(duplicates.length,658);
+ assert.equal(data.filter(x=>x.duplicatePrimary).length,329);
+ assert.equal(data.filter(x=>x.duplicateGroupSize===1).length,3654);
+ assert.ok(duplicates.every(x=>x.accessionKey.includes('|')&&x.duplicateIndex>=1));
+});
+test('audit counters match the regenerated model',()=>{
+ const audit=JSON.parse(readFileSync(new URL('../data/normalized-audit.json',import.meta.url),'utf8'));
+ assert.equal(audit.records,data.length);
+ assert.equal(audit.dated,data.filter(x=>Number.isFinite(x.start)&&Number.isFinite(x.end)).length);
+ assert.equal(audit.normalizedDates,data.filter(x=>x.dateRule==='ad-made').length);
+ assert.equal(audit.bcNormalized,data.filter(x=>['bc-range','bc-year','bc-century'].includes(x.dateRule)).length);
+ assert.equal(audit.centuryExpanded,data.filter(x=>x.dateRule==='bc-century').length);
+ assert.equal(audit.motifTagged,data.filter(x=>x.motifs.length).length);
+ assert.equal(audit.materialAllMulti,data.filter(x=>x.materialAll.length>1).length);
+ assert.equal(audit.techniqueAllMulti,data.filter(x=>x.techniqueAll.length>1).length);
 });
