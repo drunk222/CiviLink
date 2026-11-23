@@ -1,6 +1,6 @@
 * text=auto
-*.jpg binary
-*.jpeg binary
-*.png binary
+*.jpg binary -delta
+*.jpeg binary -delta
+*.png binary -delta
 *.xlsx binary
 *.docx binary
